@@ -22,8 +22,6 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/nytimes");
 const db = mongoose.connection;
 
-
-
 // Serve up static assets if in production (running on Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -31,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every request to the React app
 app.get("/saved", function(req, res) {
-  Article.find({}, function(error, doc) {
+  Articles.find({}, function(error, doc) {
     // Log any errors
     if (error) {
       console.log(error);
@@ -53,7 +51,7 @@ app.post("/saved", function(req, doc) {
 
 // Define any API routes before this runs
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.js"));
 });
 
 app.listen(PORT, function() {

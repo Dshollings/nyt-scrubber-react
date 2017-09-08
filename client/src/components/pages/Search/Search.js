@@ -1,23 +1,65 @@
 import React from "react";
-// import { Link, Route } from "react-router-dom";
 
 
-const Main = props =>
+const Search = props =>
   <div>
-    <h1>Contact Page</h1>
-    <p>
-      Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-      molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-      magna a ultrices. Aenean pellentesque placerat lacus imperdiet efficitur.
-      In felis nisl, luctus non ante euismod, tincidunt bibendum mi. In a
-      molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna posuere,
-      eget tristique dui dapibus. Maecenas fermentum elementum faucibus. Quisque
-      nec metus vestibulum, egestas massa eu, sollicitudin ipsum. Nulla
-      facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh dictum
-      ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia
-      nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus.
-      Etiam vel condimentum magna, quis tempor nulla.
-    </p>
-  </div>;
+    <div className="container">
 
-export default Main;
+      <div className="jumbotron">
+        <h1 className="text-center"><strong><i className="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+      </div>
+
+      <div className="row">
+        <div className="col-sm-12">
+          <br></br>
+
+          <div className="panel panel-primary">
+            <div className="panel-heading">
+              <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i>   Search Parameters</strong></h3>
+            </div>
+            <div className="panel-body">
+
+        
+              <form>
+
+
+                <div className="form-group">
+                  <label for="search">Search Term:</label>
+                  <input type="text" class="form-control" id="search-term"></input>
+                </div>
+
+                <div className="form-group">
+                  <label for="pwd">Number of Records to Retrieve:</label>
+                  <select className="form-control" id="num-records-select">
+                <option value="1">1</option>
+         
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+              </select>
+                </div>
+
+
+                <div className="form-group">
+                  <label for="start-year">Start Year (Optional):</label>
+                  <input type="text" class="form-control" id="start-year"></input>
+                </div>
+
+                <div className="form-group">
+                  <label for="end-year">End Year (Optional):</label>
+                  <input type="text" class="form-control" id="end-year"></input>
+                </div>
+
+      
+                <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i> Search</button>
+                <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear Results</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+export default Search;
